@@ -1,0 +1,16 @@
+%Daniel Bachler
+%CSCI 305 Prolog Lab 2
+
+mother(M,C) :-
+    parent(M,C),
+    female(M).
+
+father(F,C) :-
+    parent(F,C),
+    male(F).
+
+%not sure what second rule is
+spouse(M,F) :-
+    married(M,F).
+
+child
