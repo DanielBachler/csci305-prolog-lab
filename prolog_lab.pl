@@ -48,45 +48,56 @@ sister(Sibling, S) :-
 %Blood uncle, works
 uncle(U, N) :-
     parent(X, N),
-    sibling(U,X).
+    sibling(U,X),
+    male(U).
 
 %marriage uncle
 uncle(U, N) :-
     parent(X, N),
     sibling(X, S),
-    married(U, S).
+    married(U, S),
+    male(U).
 
-%blood aunt
+%blood aunt, works
 aunt(A, N) :-
     parent(P, N),
-    sibling(A, P).
+    sibling(A, P),
+    female(A).
 
 %marriage aunt
 aunt(A, N) :-
     parent(P, N),
     sibling(P, S),
-    married(S, A).
+    married(S, A),
+    female(A).
 
-%grandparent
+%grandparent, works, find the grandchildren of a given Grandparent
 grandparent(GP, GC) :-
     parent(P, GC),
     parent(GP, P).
 
-%grandfather
+%grandfather, works
 grandfather(GF, GC) :-
     grandparent(GF, GC),
     male(GF).
 
-%grandmother
+%grandmother, works
 grandmother(GM, GC) :-
     grandparent(GM, GC),
     female(GM).
 
-%grandchild
+%grandchild, works
 grandchild(GC, GP) :-
     parent(P, GC),
     parent(GP, P).
 
+%Ancestor/2, ancestor(X,Y) means X is ancestor of Y
+ancestor(X,Y) :-
+    parent(P, Y).
 
+%descendant/2, descendant(X,Y) means X is descendant of Y
+descendant(X,Y) :-
+    grandparent(Y,X),
+    parent(Y,X).
 
 
