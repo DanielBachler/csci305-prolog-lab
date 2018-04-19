@@ -1,0 +1,80 @@
+Daniel Bachler
+Prolog Lab 2
+
+1. X = 'King George VI' ;
+
+2. X = 'Queen Mary' ;
+
+3. X = 'King George V' ;
+
+4. X = 'King George V' ;
+   X = 'Queen Mary' ;
+   
+5. X = 'Prince William' ;
+   X = 'Prince Henry' ;
+   
+6. X = 'Princess Margaret' ;
+
+7. X = 'Prince Charles' ;
+   X = 'Prince Andrew' ;
+   X = 'Prince Edward'.
+8. X = 'Princess Anne' ;
+
+9. false.
+
+10. false, if the order is given with male first,
+    X = 'Catherine Middleton'.
+    Not sure if either way was supposed to work.
+	
+11. X = 'Prince Charles' ;
+	X = 'Lady Diana Spencer' ;
+	X = 'Queen Elizabeth II' ;
+	X = 'Prince Philip' ;
+	X = 'King George VI' ;
+	X = 'Lady Elizabeth Bowes-Lyon' ;
+	X = 'King George V' ;
+	X = 'Queen Mary' ;
+	X = 'King Edward VII' ;
+	X = 'Princess Alexandra of Denmark' ;
+	X = 'Prince Albert' ;
+	X = 'Queen Victoria' ;
+	
+12. false.
+
+13. false.
+
+14. X = 'Queen Victoria' ;
+	X = 'Princess Alexandra of Denmark' ;
+	X = 'Queen Mary' ;
+	X = 'Mrs Simpson' ;
+	X = 'Lady Elizabeth Bowes-Lyon' ;
+	X = 'Prince Albert' ;
+	X = 'King Edward VII' ;
+	X = 'King George V' ;
+	X = 'King Edward VIII' ;
+	X = 'King George VI' ;
+	X = 'Prince Philip' ;
+	
+15. X = 'King George V' ;
+	
+16. I like how simple prolog is to use, if you think a rule should work it usually will
+
+17. Sometimes things do not work the way they seem, it is rare but confusing when
+	it does happen.
+	
+18. I did, it taught me the basics of prolog without too much difficulty, and the minor
+	challenges taught me how to use prolog better than if the lab had been super simple.
+	
+19. About 5ish hours
+
+20. I might, if I find something where it would be useful,  I can see its benefits 
+	and am not opposed to using it.  The type of project would be one with a lot of 
+	relations I wanted to keep track of, or maybe being able to query about data with 
+	rules.
+	
+Extra Credit
+1. X = 'Viscount Linley' ;
+   X = 'Lady Sarah Chatto' ;
+  
+2. X = 'Viscount Linley' ;
+   X = 'Lady Sarah Chatto' ;

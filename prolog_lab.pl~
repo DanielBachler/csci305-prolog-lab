@@ -20,12 +20,12 @@ child(C, P) :-
     parent(P,C).
 
 %Given a parent, finds the son(s), works
-son(P,S) :-
+son(S, P) :-
     parent(P,S),
     male(S).
 
 %Given parent, finds daughters, works
-daughter(P,D) :-
+daughter(D, P) :-
     parent(P,D),
     female(D).
 
@@ -36,12 +36,12 @@ sibling(S1,S2) :-
     not(S1 = S2).
 
 %given a person finds their brother(s), works
-brother(S,B) :-
+brother(B, S) :-
     sibling(S,B),
     male(B).
 
 %Given a person, finds their sisters, works
-sister(Sibling, S) :-
+sister(S, Sibling) :-
     sibling(Sibling, S),
     female(S).
 
@@ -61,7 +61,7 @@ uncle(U, N) :-
 %blood aunt, works
 aunt(A, N) :-
     parent(P, N),
-    sibling(A, P),
+    sibling(P, A),
     female(A).
 
 %marriage aunt
@@ -93,10 +93,42 @@ grandchild(GC, GP) :-
 
 %Ancestor/2, ancestor(X,Y) means X is ancestor of Y
 ancestor(X,Y) :-
-    .
+    parent(X, Y).
+%Other rule for ancestor, if not immediate family.
+ancestor(X,Y) :-
+    parent(P, Y),
+    ancestor(X, P).
 
 %descendant/2, descendant(X,Y) means X is descendant of Y
 descendant(X,Y) :-
-    .
+    parent(Y, X).
+%Second rule for case where not immediate descendant
+descendant(X,Y) :-
+    child(C, Y),
+    descendant(X, C).
+
+%older, compares if X is older than Y
+older(X, Y) :-
+    born(X, X_1),
+    born(Y, Y_1),
+    X_1 < Y_1.
+
+%Younger, compares if X is younger than Y
+younger(X, Y) :-
+    born(X, X_1),
+    born(Y, Y_1),
+    X_1 > Y_1.
 
 
+%Gets the ruler when X was born
+regentWhenBorn(X, Y) :-
+    born(X, X_1),
+    reigned(Y, Y_1, Y_2),
+    Y_1 < X_1,
+    X_1 < Y_2.
+
+%Extra credit cousin rule
+cousin(X, Y) :-
+    parent(P_X, X),
+    parent(P_Y, Y),
+    sibling(P_X, P_Y).
